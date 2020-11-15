@@ -4,6 +4,7 @@ const completed_project =require('./../handlers/completed_project');
 const getall_projects =require('./../handlers/getall_projects');
 const ongoing_project =require('./../handlers/ongoing_project');
 const new_project =require('./../handlers/new_project');
+const getevents =require('./../handlers/getevents');
 
 // default
 router.get('/',(req,res,next)=>{
@@ -11,7 +12,8 @@ router.get('/',(req,res,next)=>{
 });
 router.get('/ongoing',ongoing_project);
 router.get('/project',getall_projects);
-router.get('/completed',completed_project);
+router.patch('/completed',completed_project);
 router.post('/new',new_project);
+router.post('/getevents',getevents)
 
 module.exports = router;
