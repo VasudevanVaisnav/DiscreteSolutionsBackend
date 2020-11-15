@@ -1,0 +1,29 @@
+{
+  "name": "discrete-solutions-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VasudevanVaisnav/DiscreteSolutionsBackend.git"
+  },
+  "keywords": [],
+  "author": "vaisnav",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VasudevanVaisnav/DiscreteSolutionsBackend/issues"
+  },
+  "homepage": "https://github.com/VasudevanVaisnav/DiscreteSolutionsBackend#readme",
+  "dependencies": {
+    "mongoose": "^5.9.15",
+    "express": "^4.17.1",
+    "body-parser": "^1.19.0",
+    "bcrypt": "^5.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
