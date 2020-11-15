@@ -9,7 +9,7 @@ let dbConnectCounter = 0;
 
 function dbConnect(){
   // db connect
-  mongoose.connect("mongodb+srv://root:toor@cluster0.h6x2l.mongodb.net/test?retryWrites=true&w=majority"
+  mongoose.connect("mongodb+srv://root:toor@cluster0.h6x2l.mongodb.net/alpha?retryWrites=true&w=majority"
     /*"mongodb://localhost:5000/test"*/,{
       useNewUrlParser: true, 
       useUnifiedTopology: true,
