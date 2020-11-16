@@ -16,16 +16,7 @@ function newProject(req,res,next)
     isApproved: req.body.isApproved,
     isCompleted:req.body.isCompleted,
     initialBudget:req.body.initialBudget,
-    finalBudget:req.body.finalBudget,
-    report:{
-        requirement:req.body.report.requirement,
-        feedback:req.body.report.feedback,
-        iterationNumber:req.body.report.iterationNumber,
-        startDate:req.body.report.startDate,
-        endDate:req.body.report.endDate,
-        rating:req.body.report.rating,
-        requirementNo:req.body.report.requirementNo
-    }
+    finalBudget:req.body.finalBudget
   })
   newproject.save().then(result=>{
     console.log(result);

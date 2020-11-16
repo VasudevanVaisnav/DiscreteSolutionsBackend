@@ -15,5 +15,7 @@ router.get('/project',getall_projects);
 router.patch('/completed',completed_project);
 router.post('/new',new_project);
 router.post('/getevents',getevents)
+// reports
+router.post('/report/')
 
 module.exports = router;

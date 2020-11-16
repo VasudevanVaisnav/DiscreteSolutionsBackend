@@ -11,15 +11,16 @@ const projectSchema = mongoose.Schema({
     isCompleted:{type:Boolean,required:true},
     initialBudget:{type:Int32,required:true},
     finalBudget:{type:Int32,required:false},
-    report:{
-        requirement:{type: String,required: true},
-        feedback:{type: String},
-        iterationNumber:{type:Int32,required:true},
-        startDate:{type: Date,required:true,default:Date.now()},
-        endDate:{type: Date,required:false},
-        rating:{type:Int32,required:true,default:5},
-        requirementNo:{type:Int32,required:true}
-    }
+    reports:{type:Array,default:[]}
+    // report:{
+    //     requirement:{type: String,required: true},
+    //     feedback:{type: String},
+    //     iterationNumber:{type:Int32,required:true, default:0},
+    //     startDate:{type: Date,required:true,default:Date.now()},
+    //     endDate:{type: Date,required:false},
+    //     rating:{type:Int32,required:true,default:5},
+    //     requirementNo:{type:Int32,required:true}
+    // }
 })
 module.exports = mongoose.model('project',projectSchema)
 

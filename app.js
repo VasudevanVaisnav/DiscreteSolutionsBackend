@@ -2,6 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyparser = require('body-parser');
 const clientRouter = require('./routes/clientRouter')
+const meetingRouter = require('./routes/meetingRouter')
+const projectRouter = require('./routes/projectRouter')
 
 const app = express();
 
@@ -49,6 +51,8 @@ app.use((req,res,next)=>{
 
 // function routes
 app.use('/client',clientRouter);
+app.use('/meet',meetingRouter);
+app.use('/project',projectRouter);
 
 // 404 route
 app.use((req,res,next)=>{
