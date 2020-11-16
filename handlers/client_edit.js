@@ -1,26 +1,19 @@
-const Client = require('../models/Client.js');
 const bcrypt = require('bcrypt');
-const mongoose = require("mongoose")
-
+const Client = require('./../models/Client');
 function clientEdit(req,res,next)
 {
-  // do it
-  Client.find({emailId:req.body.emailId}).exec().then((result)=>{
-    if (result.body.clientName=="null"){
-      //nothing
-    }
-    else{
-      result.body.clientName=req.body.clientName
-    }
+  if(req.body.password!=undefined){
     bcrypt.hash(req.body.password,10,(err,hash)=>{
-      if(!err){
-        result.body.password=bcrypt.hash
-      }
-      else{
-        console.log(err);
+      if (!err){    
+        req.body.password = hash     
+        Client.updateOne({emailId:req.params.clientEmailId},req.body,(err,result)=>{
+          if(!err)
+            next(err)
+          res.status(200).json({"msg":"client details updated",result})
+        })
       }
     })
-})
+  }
 }
 
 module.exports = clientEdit;

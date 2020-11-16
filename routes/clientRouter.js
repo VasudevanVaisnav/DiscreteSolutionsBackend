@@ -18,6 +18,6 @@ router.post('/register',client_register);
 // login
 router.post('/login',client_login);
 // update client info
-router.patch('/edit',client_edit);
+router.patch('/edit/:clientEmailId',client_edit);
 
 module.exports = router;
