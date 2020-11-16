@@ -1,4 +1,6 @@
 const Meeting = require('../models/Meeting.js');
+const mongoose = require("mongoose")
+
 
 //NOTE ADDITIONAL PARAMS TO BE PASSED IN REQ
 

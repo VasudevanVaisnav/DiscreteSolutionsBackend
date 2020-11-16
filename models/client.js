@@ -7,4 +7,4 @@ const clientSchema = mongoose.Schema({
     phoneNo: {type: String,required: true, unique: true},
     organisationName: {type: String}
 })
-module.exports = mongoose.model('client',clientSchema)
+module.exports = mongoose.model('clients',clientSchema)

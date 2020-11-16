@@ -1,4 +1,4 @@
-// const Project = require('../models/Project.js');
+const Project = require('../models/Project.js');
 
 function getAllProjects(req,res,next)
 {

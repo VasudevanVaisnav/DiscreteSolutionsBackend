@@ -59,6 +59,7 @@ app.use((req,res,next)=>{
 
 // Error handler
 app.use((err,req,res,next)=>{
+  console.log("got you");
   res.status(err.status || 500).json({"Error":err.message});
 })
 

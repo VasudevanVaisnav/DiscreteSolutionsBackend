@@ -1,4 +1,5 @@
 const Meeting = require('../models/Meeting.js');
+const mongoose = require("mongoose")
 
 function getAllMeeting(req,res,next)
 {

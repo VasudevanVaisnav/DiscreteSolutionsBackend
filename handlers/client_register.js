@@ -1,5 +1,6 @@
 const client = require('../models/Client.js');
 const bcrypt = require('bcrypt');
+const mongoose = require("mongoose")
 
 function clientRegister(req,res,next)
 {

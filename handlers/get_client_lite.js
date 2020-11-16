@@ -1,4 +1,5 @@
 const Client = require('../models/Client.js');
+const mongoose = require("mongoose")
 
 function getClientLite(req,res,next)
 {

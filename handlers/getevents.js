@@ -3,6 +3,7 @@ const N_APPROVED = "not approved";
 const ONGOING = "ongoing";
 const COMP = "completed"
 const Project = require('../models/Project.js');
+const mongoose = require("mongoose")
 
 function getClientLite(req,res,next)
 {

@@ -1,10 +1,11 @@
-const Client = require('../models/Clint.js');
+const Client = require('../models/Client.js');
 const bcrypt = require('bcrypt');
+const mongoose = require("mongoose")
 
 function clientEdit(req,res,next)
 {
   // do it
-  client.find({emailId:req.body.emailId}).exec().then((result)=>{
+  Client.find({emailId:req.body.emailId}).exec().then((result)=>{
     if (result.body.clientName=="null"){
       //nothing
     }

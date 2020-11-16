@@ -1,9 +1,11 @@
-// const Clint = require('./../models/Client');
+const client = require('./../models/Client');
 const bcrypt = require('bcrypt');
+const mongoose = require("mongoose")
 
 function clientLogin(req,res,next)
 {
   client.find({emailId:req.body.emailId}).exec().then(result=>{
+      console.log("login");
     console.log(result);
     if (result.length==1){
         bcrypt.compare(req.body.password,result[0].password,(err,verdict)=>{
