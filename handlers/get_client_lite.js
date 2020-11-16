@@ -1,9 +1,11 @@
-// const Clint = require('../models/Clint.js');
+const Client = require('../models/Client.js');
 
 function getClientLite(req,res,next)
 {
-  // do it
-  res.status(202).json({"route":req.hostname+req.url})
+  Client.find({email:req.params.clientEmailId}).select("clientName organisationName").exec()
+  .then((docs=>{
+    res.status(200).json(docs[0])
+  }))
 }
 
 module.exports = getClientLite;

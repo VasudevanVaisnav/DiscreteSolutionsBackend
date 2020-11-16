@@ -9,14 +9,14 @@ const client_edit = require('./../handlers/client_edit')
 // default
 router.get('/',(req,res,next)=>{res.status(200).json({routes:["/:userId","/register","/login"]})});
 // fetch user data
-router.get('/info/:clientId',get_client);
+router.get('/info/:clientEmailId',get_client);
 // fetch client data lite
-router.get('/info/lite/:clientId',get_client_lite);
+router.get('/info/lite/:clientEmailId',get_client_lite);
 // register
 router.post('/register',client_register);
 // login
 router.post('/login',client_login);
 // update client info
-router.patch('/edit/',client_edit);
+router.patch('/edit',client_edit);
 
 module.exports = router;
