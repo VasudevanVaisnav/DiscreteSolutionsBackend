@@ -3,24 +3,25 @@ const bcrypt = require('bcrypt');
 
 function clientLogin(req,res,next)
 {
-  Client.findOne({email:req.body.emailId})
-  .exec()
-  .then(client =>{
-    if(client==null)
-    {
-      return res.status(401).json({msg:"Auth failed"});
+  client.find({emailId:req.body.emailId}).exec().then(result=>{
+    console.log(result);
+    if (result.length==1){
+        bcrypt.compare(req.body.password,result[0].password,(err,verdict)=>{
+            if (!err && verdict==true){
+                res.status(200).json({"msg":"success"})
+            }
+            else if(!err){
+                res.status(201).json({"msg":"invalid password"})
+            }
+            else{
+                res.status(202).json({"msg":"incorrect password"})
+            }
+        })
     }
-    bcrypt.compare(req.body.password,client.password,(err,result)=>{
-      if(err || result==false)
-      {
-        return res.status(401).json({msg:"Auth failed"});
-      }
-      return res.status(200).json({msg:"Auth successful"});
-    });
-  })
-  .catch(err=>{
-    next(err);
-  });
+    else{
+        return res.status(203).json({"msg":"no such client found"})
+    }        
+})
 }
 
 module.exports = clientLogin;
