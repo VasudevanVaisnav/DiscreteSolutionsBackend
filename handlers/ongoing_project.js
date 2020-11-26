@@ -3,7 +3,7 @@ const mongoose = require("mongoose")
 
 function ongoingProject(req,res,next)
 {
-  Project.find({$and:{isCompleted:false,isApproved:true}}).exec().select("emailId projectTitle problemStatement completionDate startingDate initialDeadline isApproved isCompleted initialBudget finalBudget")
+  Project.find({$and:{isCompleted:false,isApproved:true,emailId:req.params.clientEmailId}}).exec().select("emailId projectTitle problemStatement completionDate startingDate initialDeadline isApproved isCompleted initialBudget finalBudget")
   .then(docs=>{
     let response = {
       count: docs.length,

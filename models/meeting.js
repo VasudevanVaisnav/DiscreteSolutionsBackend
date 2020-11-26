@@ -10,7 +10,7 @@ const meetingSchema = mongoose.Schema({
     isCompleted:{type:Boolean,required:true},
     agenda: {type:String,required:true},
     meetingLink:{type:String,required:true},
-    approximateDuration:{type:Int32,required:true}     
+    approximateDuration:{type:Number,required:true}     
 })
 module.exports = mongoose.model('meeting',meetingSchema)
 

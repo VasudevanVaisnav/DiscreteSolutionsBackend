@@ -4,7 +4,7 @@ const Meeting = require('../models/Meeting.js');
 function scheduleMeeting(req,res,next)
 {
     const meet = new Meeting({
-        _id = new mongoose.Types.ObjectId(),
+        _id : new mongoose.Types.ObjectId(),
         emailId: req.emailId,
         projectAssociated: req.projectName,
         phoneNo: req.phoneNo,

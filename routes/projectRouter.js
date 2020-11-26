@@ -10,8 +10,8 @@ const getevents =require('./../handlers/getevents');
 router.get('/',(req,res,next)=>{
   res.status(200).json({routes:["/ongoing","/project","/completed","/new"]})
 });
-router.get('/ongoing',ongoing_project);
-router.get('/project',getall_projects);
+router.get('/ongoing/:clientEmailId',ongoing_project);
+router.get('/project/:clientEmailId',getall_projects);
 router.patch('/completed',completed_project);
 router.post('/new',new_project);
 router.post('/getevents',getevents)
