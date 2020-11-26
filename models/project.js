@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 const projectSchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
-    emailId: {type: String,required: true, unique: true},
+    emailId: {type: String,required: true},
     projectTitle: {type: String, required: true, unique:true},
     problemStatement: {type: String,required: true},
     currentIterationNumber: {type: Number, default:1},

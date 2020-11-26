@@ -2,13 +2,12 @@ const Project = require('../models/Project.js');
 
 function getAllProjects(req,res,next)
 {
-  Project.find({emailId:req.params.clientEmailId}).exec().select("emailId projectTitle problemStatement completionDate startingDate initialDeadline isApproved isCompleted initialBudget finalBudget")
-  .then(docs=>{
+  Project.find({emailId:req.params.clientEmailId}).select("emailId projectTitle problemStatement completionDate startingDate initialDeadline isApproved isCompleted initialBudget finalBudget")
+  .exec().then(docs=>{
     let response = {
       count: docs.length,
       projects: docs.map(doc=>{
         return {
-          count:docs.length,
           ...doc
         }
       })

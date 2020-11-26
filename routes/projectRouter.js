@@ -12,7 +12,7 @@ router.get('/',(req,res,next)=>{
 });
 router.get('/ongoing/:clientEmailId',ongoing_project);
 router.get('/project/:clientEmailId',getall_projects);
-router.patch('/completed',completed_project);
+router.get('/completed/:clientEmailId',completed_project);
 router.post('/new',new_project);
 router.post('/getevents',getevents)
 // reports

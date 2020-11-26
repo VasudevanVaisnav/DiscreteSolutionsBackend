@@ -16,7 +16,8 @@ function newProject(req,res,next)
     isApproved: req.body.isApproved,
     isCompleted:req.body.isCompleted,
     initialBudget:req.body.initialBudget,
-    finalBudget:req.body.finalBudget
+    finalBudget:req.body.finalBudget,
+    currentDate:req.body.currentDate
   })
   newproject.save().then(result=>{
     console.log(result);
