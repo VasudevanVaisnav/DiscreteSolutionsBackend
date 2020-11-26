@@ -4,7 +4,7 @@ const mongoose = require("mongoose")
 function getAllMeeting(req,res,next)
 {
   // do it
-  Meeting.find({emailId:req.params,isCompleted:false}).exec().then(result=>{
+  Meeting.find({$and:[{emailId:req.params.emailId},{isCompleted:false}]}).exec().then(result=>{  
     res.status(200).json({"meetingsCount":result.length,result})
   }).catch(err=>{
     console.log(err);
