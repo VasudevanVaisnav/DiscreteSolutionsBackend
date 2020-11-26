@@ -7,7 +7,6 @@ const get_client_lite = require('./../handlers/get_client_lite')
 const client_edit = require('./../handlers/client_edit')
 
 // default
-console.log("sus1");
 router.get('/',(req,res,next)=>{res.status(200).json({routes:["/:userId","/register","/login"]})});
 // fetch user data
 router.get('/info/:clientEmailId',get_client);
